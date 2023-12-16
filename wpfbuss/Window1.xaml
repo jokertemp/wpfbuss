@@ -1,0 +1,31 @@
+﻿<Window x:Class="wpfbuss.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpfbuss"
+        mc:Ignorable="d"
+        Title="财务管理系统" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- 功能选择区域 -->
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <Button Content="支出查询" Margin="0,0,10,0" Click="Button_Click"/>
+            <Button Content="收入查询" Margin="0,0,10,0" Click="Button_Click_1"/>
+            <Button Content="添加订单" Margin="0,0,10,0" Click="Button_Click_2"/>
+            <Button Content="删除订单" Margin="0,0,10,0" Click="Button_Click_3"/>
+            <Button Content="修改订单" Margin="0,0,10,0" Click="Button_Click_4"/>
+            <Button Content="员工信息" Margin="0,0,10,0" Click="Button_Click_5"/>
+        </StackPanel>
+
+        <!-- 详细展示区域 -->
+        <DataGrid x:Name="dataGrid" Grid.Row="1" >
+ 
+        </DataGrid>
+
+    </Grid>
+</Window>
