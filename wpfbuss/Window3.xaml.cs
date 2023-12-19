@@ -16,12 +16,12 @@ using System.Windows.Shapes;
 namespace wpfbuss
 {
     /// <summary>
-    /// Window2.xaml 的交互逻辑
+    /// Window3.xaml 的交互逻辑
     /// </summary>
-    public partial class Window2 : Window
+    public partial class Window3 : Window
     {
         string connectionString = "Initial Catalog=Business;User ID=admin;Password=123456";
-        public Window2()
+        public Window3()
         {
             InitializeComponent();
             this.DataContext = new dataModel();
@@ -34,11 +34,11 @@ namespace wpfbuss
             string sql = "";
             if (IncomeRadioButton.IsChecked == true)
             {
-                sql = $"INSERT INTO 收入表 (收入ID, 日期, 金额, 记录人, 备注) VALUES ('{model.Id}', '{model.Date.ToString("yyyy-MM-dd")}', {model.Amount}, '{model.Recorder}', '{model.Note}')";
+                sql = $"DELETE FROM 收入表 WHERE 收入ID = '{model.Id}'";
             }
             else if (ExpenseRadioButton.IsChecked == true)
             {
-                sql = $"INSERT INTO 支出表 (支出ID, 日期, 金额, 记录人, 备注) VALUES ('{model.Id}', '{model.Date.ToString("yyyy-MM-dd")}', {model.Amount}, '{model.Recorder}', '{model.Note}')";
+                sql = $"DELETE FROM 支出表 WHERE 支出ID = '{model.Id}'";
             }
             else
             {

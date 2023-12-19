@@ -26,8 +26,6 @@ namespace wpfbuss
         public Window1()
         {
             InitializeComponent();
-            
-
         }
         private DataTable GetData(string sql)
         {
@@ -61,7 +59,7 @@ namespace wpfbuss
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             // 获取数据
-            DataTable dataTable = GetData("SELECT * FROM 支出表 ");
+            DataTable dataTable = GetData("QueryIncome");
 
             // 绑定到DataGrid
             dataGrid.ItemsSource = dataTable.DefaultView;
@@ -70,7 +68,7 @@ namespace wpfbuss
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             // 获取数据
-            DataTable dataTable = GetData("SELECT * FROM 收入表 ");
+            DataTable dataTable = GetData("QueryExpenditure");
 
             // 绑定到DataGrid
             dataGrid.ItemsSource = dataTable.DefaultView;
@@ -86,17 +84,16 @@ namespace wpfbuss
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
+            Window3 window3 = new Window3();
+            window3.Show();
 
-            Window2 window2 = new Window2();
-            // 显示主界面
-            window2.Show();
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            Window2 window2 = new Window2();
+            Window4 window4 = new Window4();
             // 显示主界面
-            window2.Show();
+            window4.Show();
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
